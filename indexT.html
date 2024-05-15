@@ -6,13 +6,32 @@
     <!-- browser doesn't understand jsx, needs babel(javascript compiler) to change to reg js -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/jsx">
-      <!-- declarative React code -->
-      <!-- access div -->
+      //declarative React code
+      //access div
         const myApp = document.getElementById('nads-app');
-      <!-- target div & create a root to display comps in -->
+      //component is func that returns UI element, can take in custom arg(prop)
+        function Header({title}) {
+          console.log(title);
+          return (<h1>{title}</h1>);
+        }
+
+        function LandingPage() {
+          const foods = ['Banana', 'Yogurt', 'Pasta', 'Mac & Cheese'];
+          return (
+            <container>
+              <Header title="ReactParty"/> 
+              <ul>
+                {foods.map((food) => (
+                  <li key={food}>{food}</li>
+                ))}
+              </ul>
+            </container>
+              );
+        }
+      //target div & create a root to display comps in
         const root = ReactDOM.createRoot(myApp);
-      <!-- render react code to DOM -->
-        root.render(<h1>BooooooO!</h1>);
+      //render react code to DOM
+        root.render(<LandingPage />);
     </script>
   </body>
 </html>
