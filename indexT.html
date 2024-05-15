@@ -3,16 +3,21 @@
     <div id="nads-app"></div>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- browser doesn't understand jsx, needs babel(javascript compiler) to change to reg js -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/jsx">
+      <!-- declarative React code -->
+      <!-- access div -->
         const myApp = document.getElementById('nads-app');
-         const root = ReactDom.createRoot(myApp);
+      <!-- target div & create a root to display comps in -->
+        const root = ReactDOM.createRoot(myApp);
+      <!-- render react code to DOM -->
         root.render(<h1>BooooooO!</h1>);
     </script>
   </body>
 </html>
 
-<!-- 
+<!--  IMPERATIVE JS CODE
         // // create a new paragraph element
         // const paragraph = document.createElement('p');
 
