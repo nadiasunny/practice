@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import HungerButton from './hungry-btn';
 
 const myApp = 'nads-app';
 //component is func that returns UI element, can take in custom arg(prop)
@@ -9,12 +9,6 @@ function Header({title}) {
 
 export default function LandingPage() {
   const foods = ['Banana', 'Yogurt', 'Pasta', 'Mac & Cheese'];
-  const [hunger, setHunger] = useState(0);
-          
-  function handleClik() {
-    setHunger(hunger + 1);
-    console.log('increment hungry count');
-  }
           
   return (
      <container>
@@ -24,7 +18,7 @@ export default function LandingPage() {
               <li key={food}>{food}</li>
             ))}
           </ul>
-          <button onClick={handleClik}>Hungry ({hunger})</button>
+          <HungerButton />
       </container>
           );
         }
